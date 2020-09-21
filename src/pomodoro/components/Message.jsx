@@ -1,10 +1,10 @@
 import React from 'react';
 import '../css/Message.scss';
 
-const Message = () => {
+const Message = (props) => {
   return (
     <div className='message'>
-      <p>Get focus and conquer the world!!!</p>
+      <p>{props.message}</p>
     </div>
   );
 };

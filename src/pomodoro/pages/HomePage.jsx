@@ -8,7 +8,7 @@ const HomePage = () => {
     <div className='main-container'>
       <h1>Focus Guard: a pomodoro timer.</h1>
       <Pomodoro />
-      <Message />
+      <Message message={'Get Focus and conquer the world!!!'} />
     </div>
   );
 };
