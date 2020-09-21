@@ -1,7 +1,7 @@
 .pomodoro {
   display: flex;
   width: 700px;
-  height: 550px;
+  height: 500px;
   background: rgba(47, 181, 56, 0.6);
   background: -moz-linear-gradient(
     top,
@@ -52,11 +52,14 @@
   border-radius: 20px;
   margin: 20px;
   color: rgb(0, 0, 0);
-  .first-row {
+  .first-row,
+  .third-row {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     width: 100px;
-    height: 350px;
+    height: 400px;
   }
   .second-row {
     display: flex;
@@ -64,12 +67,6 @@
     justify-content: space-between;
     align-items: center;
     width: 350px;
-    height: 350px;
-  }
-  .third-row {
-    display: flex;
-    align-items: center;
-    width: 100px;
     height: 350px;
   }
 }

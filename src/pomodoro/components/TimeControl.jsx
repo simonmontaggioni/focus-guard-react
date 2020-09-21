@@ -4,11 +4,13 @@ import '../css/TimeControl.scss';
 const TimeControl = (props) => {
   return (
     <div className='time-control'>
-      <span>{props.controlType}</span>
-      <button>+</button>
-      <span className='time'>00</span>
-      <button>-</button>
-      <span>Time</span>
+      <span className='text'>{props.controlType}</span>
+      <div className='button-group'>
+        <button>+</button>
+        <span className='time'>00</span>
+        <button>-</button>
+      </div>
+      <span className='text'>Time</span>
     </div>
   );
 };
