@@ -47,9 +47,29 @@
     rgba(117, 217, 215, 0.85) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2fb538', endColorstr='#75d9d7', GradientType=0 );
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   border-radius: 20px;
   margin: 20px;
   color: rgb(0, 0, 0);
+  .first-row {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 350px;
+  }
+  .second-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 350px;
+  }
+  .third-row {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 350px;
+  }
 }
