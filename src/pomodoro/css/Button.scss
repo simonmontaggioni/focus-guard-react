@@ -1,11 +1,12 @@
 .button {
   width: 350px;
-  height: 40px;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 25px;
   font-weight: 600;
+  cursor: pointer;
   border: solid 3px rgb(26, 14, 80);
   border-radius: 10px;
   background: rgba(156, 241, 252, 1);
@@ -47,4 +48,13 @@
     rgba(119, 188, 207, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9cf1fc', endColorstr='#77bccf', GradientType=0 );
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
 }
