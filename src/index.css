@@ -2,6 +2,15 @@
   font-family: 'Kalam';
   src: local('Kalam'), url(./pomodoro/assets/fonts/Kalam-Regular.ttf);
 }
+@font-face {
+  font-family: 'Caveat Brush';
+  src: local('Caveat Brush'),
+    url(./pomodoro/assets/fonts/CaveatBrush-Regular.ttf);
+}
+@font-face {
+  font-family: 'Caveat';
+  src: local('Caveat'), url(./pomodoro/assets/fonts/Caveat-Regular.ttf);
+}
 
 body {
   margin: 0;

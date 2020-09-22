@@ -10,14 +10,16 @@
   .description {
     position: absolute;
     top: 0px;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 23px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: -1px -1px 3px rgb(146, 228, 253);
   }
 
   .switch {
     position: relative;
-    width: 80px;
-    height: 40px;
+    width: 100px;
+    height: 45px;
   }
   input {
     visibility: hidden;
@@ -46,14 +48,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 80px;
+      width: 100px;
       margin: 0px 2px;
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 500;
       span {
         margin-left: 5px;
         margin-right: 4px;
-        letter-spacing: -1px;
+        letter-spacing: 0px;
       }
     }
 
@@ -61,9 +63,9 @@
       position: absolute;
       box-sizing: border-box;
       content: '';
-      height: 30px;
-      width: 43px;
-      left: 3px;
+      height: 35px;
+      width: 56px;
+      left: 6px;
       bottom: 2px;
       border: solid 2px black;
       border-radius: 12px;
