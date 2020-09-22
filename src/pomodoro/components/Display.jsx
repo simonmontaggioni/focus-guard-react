@@ -4,9 +4,9 @@ import '../css/Display.scss';
 const Display = () => {
   return (
     <div className='display'>
-      <span>00</span>
-      <span>:</span>
-      <span>00</span>
+      <span className='digits'>00</span>
+      <span className='colon'>:</span>
+      <span className='digits'>00</span>
     </div>
   );
 };

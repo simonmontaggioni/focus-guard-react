@@ -11,6 +11,10 @@
   font-family: 'Caveat';
   src: local('Caveat'), url(./pomodoro/assets/fonts/Caveat-Regular.ttf);
 }
+@font-face {
+  font-family: '7segments';
+  src: local('7segments'), url(./pomodoro/assets/fonts/7segments.ttf);
+}
 
 body {
   margin: 0;
