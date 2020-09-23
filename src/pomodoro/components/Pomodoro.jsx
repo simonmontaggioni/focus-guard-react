@@ -7,9 +7,10 @@ import Button from './Button';
 import SwitchButton from './SwitchButton';
 import useInterval from '../hooks/useInterval';
 
-const MINUTES = 2;
-const SECONDS = 10;
-const DEFAULT_DELAY = 500;
+const MINUTES = 25;
+const SECONDS = 0;
+const DEFAULT_DELAY = 100;
+const MAX_TIME_VALUE = 59;
 
 const Pomodoro = () => {
   const [counter, setCounter] = useState({
@@ -18,6 +19,8 @@ const Pomodoro = () => {
   });
   const [running, setRuning] = useState(false);
   const [delay, setDelay] = useState(null);
+  const [focusTime, setFocusTime] = useState(MINUTES);
+  const [breakTime, setBreakTime] = useState(5);
 
   const saveCounterState = (minutes, seconds) => {
     setCounter({ ...counter, minutes, seconds });
@@ -28,7 +31,7 @@ const Pomodoro = () => {
       saveCounterState(counter.minutes, counter.seconds - 1);
     } else {
       if (counter.minutes > 0) {
-        saveCounterState(counter.minutes - 1, 9);
+        saveCounterState(counter.minutes - 1, MAX_TIME_VALUE);
       } else {
         setDelay(null);
       }
@@ -45,7 +48,7 @@ const Pomodoro = () => {
   const handleReset = () => {
     setDelay(null);
     setRuning(false);
-    setCounter({ ...counter, minutes: MINUTES, seconds: SECONDS });
+    setCounter({ ...counter, minutes: focusTime, seconds: SECONDS });
   };
 
   const handlePlay = () => {
@@ -57,11 +60,26 @@ const Pomodoro = () => {
     }
   };
 
+  const handleFocusTime = (minutes) => {
+    setFocusTime(minutes);
+    if (!running) {
+      saveCounterState(minutes, SECONDS);
+    }
+  };
+  const handleBreakTime = (minutes) => {
+    console.log(`increasing break time: ${minutes}`);
+    setBreakTime(minutes);
+  };
+
   return (
     <div className='pomodoro'>
       <div className='first-row'>
         <SwitchButton text={'Notifications'} />
-        <TimeControl controlType={'Break'} />
+        <TimeControl
+          controlType={'Break'}
+          handleTime={handleBreakTime}
+          time={breakTime}
+        />
       </div>
       <div className='second-row'>
         <Button text={'Reset'} handleOnClick={handleReset} />
@@ -70,7 +88,11 @@ const Pomodoro = () => {
       </div>
       <div className='third-row'>
         <SwitchButton text={'Sound'} />
-        <TimeControl controlType={'Focus'} />
+        <TimeControl
+          controlType={'Focus'}
+          handleTime={handleFocusTime}
+          time={focusTime}
+        />
       </div>
     </div>
   );
