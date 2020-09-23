@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-// import useInterval from '../hooks/useInterval';
 import Display from './Display';
 import '../css/Pomodoro.scss';
 import TimeControl from './TimeControl';
@@ -9,7 +8,7 @@ import useInterval from '../hooks/useInterval';
 
 const MINUTES = 25;
 const SECONDS = 0;
-const DEFAULT_DELAY = 100;
+const DEFAULT_DELAY = 50;
 const MAX_TIME_VALUE = 59;
 
 const Pomodoro = () => {
@@ -34,8 +33,12 @@ const Pomodoro = () => {
       if (counter.minutes > 0) {
         saveCounterState(counter.minutes - 1, MAX_TIME_VALUE);
       } else {
+        if (focusTime) {
+          saveCounterState(breakTimeValue, SECONDS);
+        } else {
+          saveCounterState(focusTimeValue, SECONDS);
+        }
         setFocusTime(!focusTime);
-        saveCounterState(breakTimeValue, SECONDS);
       }
     }
   };
