@@ -19,8 +19,9 @@ const Pomodoro = () => {
   });
   const [running, setRuning] = useState(false);
   const [delay, setDelay] = useState(null);
-  const [focusTime, setFocusTime] = useState(MINUTES);
-  const [breakTime, setBreakTime] = useState(5);
+  const [focusTime, setFocusTime] = useState(true);
+  const [focusTimeValue, setFocusTimeValue] = useState(MINUTES);
+  const [breakTimeValue, setBreakTimeValue] = useState(5);
 
   const saveCounterState = (minutes, seconds) => {
     setCounter({ ...counter, minutes, seconds });
@@ -33,7 +34,8 @@ const Pomodoro = () => {
       if (counter.minutes > 0) {
         saveCounterState(counter.minutes - 1, MAX_TIME_VALUE);
       } else {
-        setDelay(null);
+        setFocusTime(!focusTime);
+        saveCounterState(breakTimeValue, SECONDS);
       }
     }
   };
@@ -48,7 +50,7 @@ const Pomodoro = () => {
   const handleReset = () => {
     setDelay(null);
     setRuning(false);
-    setCounter({ ...counter, minutes: focusTime, seconds: SECONDS });
+    setCounter({ ...counter, minutes: focusTimeValue, seconds: SECONDS });
   };
 
   const handlePlay = () => {
@@ -60,15 +62,14 @@ const Pomodoro = () => {
     }
   };
 
-  const handleFocusTime = (minutes) => {
-    setFocusTime(minutes);
+  const handleFocusTimeValue = (minutes) => {
+    setFocusTimeValue(minutes);
     if (!running) {
       saveCounterState(minutes, SECONDS);
     }
   };
-  const handleBreakTime = (minutes) => {
-    console.log(`increasing break time: ${minutes}`);
-    setBreakTime(minutes);
+  const handleBreakTimeValue = (minutes) => {
+    setBreakTimeValue(minutes);
   };
 
   return (
@@ -77,8 +78,8 @@ const Pomodoro = () => {
         <SwitchButton text={'Notifications'} />
         <TimeControl
           controlType={'Break'}
-          handleTime={handleBreakTime}
-          time={breakTime}
+          handleTime={handleBreakTimeValue}
+          time={breakTimeValue}
         />
       </div>
       <div className='second-row'>
@@ -90,8 +91,8 @@ const Pomodoro = () => {
         <SwitchButton text={'Sound'} />
         <TimeControl
           controlType={'Focus'}
-          handleTime={handleFocusTime}
-          time={focusTime}
+          handleTime={handleFocusTimeValue}
+          time={focusTimeValue}
         />
       </div>
     </div>
