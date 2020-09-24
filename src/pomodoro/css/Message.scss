@@ -1,24 +1,120 @@
-.message {
+.message-container {
   position: absolute;
   bottom: 100px;
   left: center;
   display: flex;
+  flex-direction: column;
   width: 700px;
+  height: 150px;
   box-sizing: border-box;
-  padding: 0px 20px;
+  padding: 0px 0px;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  color: rgb(0, 0, 0);
-  font-size: 50px;
-  font-weight: 500;
-  letter-spacing: 0px;
-  font-family: 'Caveat Brush';
+  background: rgba(71, 71, 71, 1);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(44, 44, 44, 0.96) 26%,
+    rgba(0, 0, 0, 0.93) 51%,
+    rgba(17, 17, 17, 0.91) 65%,
+    rgba(43, 43, 43, 0.89) 80%,
+    rgba(28, 28, 28, 0.87) 91%,
+    rgba(19, 19, 19, 0.86) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%, rgba(71, 71, 71, 1)),
+    color-stop(26%, rgba(44, 44, 44, 0.96)),
+    color-stop(51%, rgba(0, 0, 0, 0.93)),
+    color-stop(65%, rgba(17, 17, 17, 0.91)),
+    color-stop(80%, rgba(43, 43, 43, 0.89)),
+    color-stop(91%, rgba(28, 28, 28, 0.87)),
+    color-stop(100%, rgba(19, 19, 19, 0.86))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(44, 44, 44, 0.96) 26%,
+    rgba(0, 0, 0, 0.93) 51%,
+    rgba(17, 17, 17, 0.91) 65%,
+    rgba(43, 43, 43, 0.89) 80%,
+    rgba(28, 28, 28, 0.87) 91%,
+    rgba(19, 19, 19, 0.86) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(44, 44, 44, 0.96) 26%,
+    rgba(0, 0, 0, 0.93) 51%,
+    rgba(17, 17, 17, 0.91) 65%,
+    rgba(43, 43, 43, 0.89) 80%,
+    rgba(28, 28, 28, 0.87) 91%,
+    rgba(19, 19, 19, 0.86) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(44, 44, 44, 0.96) 26%,
+    rgba(0, 0, 0, 0.93) 51%,
+    rgba(17, 17, 17, 0.91) 65%,
+    rgba(43, 43, 43, 0.89) 80%,
+    rgba(28, 28, 28, 0.87) 91%,
+    rgba(19, 19, 19, 0.86) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(71, 71, 71, 1) 0%,
+    rgba(44, 44, 44, 0.96) 26%,
+    rgba(0, 0, 0, 0.93) 51%,
+    rgba(17, 17, 17, 0.91) 65%,
+    rgba(43, 43, 43, 0.89) 80%,
+    rgba(28, 28, 28, 0.87) 91%,
+    rgba(19, 19, 19, 0.86) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#474747', endColorstr='#131313', GradientType=1 );
+  .message {
+    position: absolute;
+    top: 0px;
+    left: center;
+    display: flex;
+    box-sizing: border-box;
+    margin: 10px 0px 0px 0px;
+    width: 90%;
+    font-size: 35px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    color: white;
+    font-family: 'Caveat Brush';
+  }
+  .small-font {
+    font-size: 30px;
+  }
+
+  .author {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0px 5px 5px 0px;
+    width: 50%;
+    font-size: 20px;
+    font-weight: 800;
+    font-style: oblique;
+    font-family: serif;
+    color: white;
+    border-radius: 10px;
+    span {
+      margin: 0px 20px;
+    }
+  }
 }
 
-.focus {
-  background-color: rgb(57, 249, 57);
+.focus-shadow {
+  box-shadow: 1px 1px 30px 15px rgba(71, 255, 71, 0.755);
 }
-.brake {
-  background-color: rgb(71, 68, 253);
+.brake-shadow {
+  box-shadow: 1px 1px 30px 15px rgba(116, 172, 255, 0.755);
 }

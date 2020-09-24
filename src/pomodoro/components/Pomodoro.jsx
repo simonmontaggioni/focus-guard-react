@@ -21,6 +21,7 @@ const Pomodoro = () => {
   const [idle, setIdle] = useState(true);
   const [running, setRuning] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
   const [messageType, setMessageType] = useState('focus');
   const [messageNumber, setMessageNumber] = useState(
     Math.floor(Math.random() * 10)
@@ -49,7 +50,7 @@ const Pomodoro = () => {
           setMessageType('focus');
         }
         setMessageNumber(Math.floor(Math.random() * 10));
-        setShowMessage(true);
+        setShowMessage(showNotification);
         setFocusTime(!focusTime);
       }
     }
@@ -77,7 +78,7 @@ const Pomodoro = () => {
       setRuning(false);
     } else {
       setIdle(false);
-      setShowMessage(true);
+      setShowMessage(showNotification);
       startCountDown();
     }
   };
@@ -94,11 +95,21 @@ const Pomodoro = () => {
     }
   };
 
+  const handleToogleNotification = () => {
+    setShowNotification(!showNotification);
+    if (setShowNotification) {
+      setShowMessage(!showNotification);
+    }
+  };
+
   return (
     <>
       <div className='pomodoro'>
         <div className='first-row'>
-          <SwitchButton text={'Notifications'} />
+          <SwitchButton
+            text={'Notifications'}
+            toggleAction={handleToogleNotification}
+          />
           <TimeControl
             controlType={'Break'}
             handleTime={handleBreakTimeValue}

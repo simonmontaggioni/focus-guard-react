@@ -7,11 +7,15 @@ const SwitchButton = (props) => {
       <div className='switch-button'>
         <div className='description'>{props.text}</div>
         <label className='switch'>
-          <input type='checkbox' />
+          <input
+            default='checked'
+            type='checkbox'
+            onChange={props.toggleAction}
+          />
           <div className='slider'>
             <div className='content'>
-              <span>ON</span>
               <span>OFF</span>
+              <span>ON</span>
             </div>
           </div>
         </label>
