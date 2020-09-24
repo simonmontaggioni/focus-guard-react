@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Display from './Display';
 import '../css/Pomodoro.scss';
 import TimeControl from './TimeControl';
 import Button from './Button';
 import SwitchButton from './SwitchButton';
 import Message from '../components/Message';
+import alarmPath from '../assets/sounds/Japanese-Temple-Bell-Small.wav';
 
 import useInterval from '../hooks/useInterval';
 
@@ -22,6 +23,7 @@ const Pomodoro = () => {
   const [running, setRuning] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [showNotification, setShowNotification] = useState(true);
+  const [soundOn, setSoundOn] = useState(true);
   const [messageType, setMessageType] = useState('focus');
   const [messageNumber, setMessageNumber] = useState(
     Math.floor(Math.random() * 10)
@@ -30,6 +32,7 @@ const Pomodoro = () => {
   const [focusTime, setFocusTime] = useState(true);
   const [focusTimeValue, setFocusTimeValue] = useState(MINUTES);
   const [breakTimeValue, setBreakTimeValue] = useState(5);
+  const audioTag = useRef();
 
   const saveCounterState = (minutes, seconds) => {
     setCounter({ ...counter, minutes, seconds });
@@ -48,6 +51,9 @@ const Pomodoro = () => {
         } else {
           saveCounterState(focusTimeValue, SECONDS);
           setMessageType('focus');
+        }
+        if (soundOn) {
+          audioTag.current.play();
         }
         setMessageNumber(Math.floor(Math.random() * 10));
         setShowMessage(showNotification);
@@ -102,6 +108,10 @@ const Pomodoro = () => {
     }
   };
 
+  const handleToogleSound = () => {
+    setSoundOn(!soundOn);
+  };
+
   const state = idle
     ? 'idle'
     : running
@@ -132,12 +142,15 @@ const Pomodoro = () => {
           <Button text={'Play/Pause'} handleOnClick={handlePlay} />
         </div>
         <div className='third-row'>
-          <SwitchButton text={'Sound'} />
+          <SwitchButton text={'Sound'} toggleAction={handleToogleSound} />
           <TimeControl
             controlType={'Focus'}
             handleTime={handleFocusTimeValue}
             time={focusTimeValue}
           />
+        </div>
+        <div className='audio-container'>
+          <audio ref={audioTag} src={alarmPath} />
         </div>
       </div>
       {showMessage && (
