@@ -16,6 +16,7 @@ const Pomodoro = () => {
     minutes: MINUTES,
     seconds: SECONDS,
   });
+  const [idle, setIdle] = useState(true);
   const [running, setRuning] = useState(false);
   const [delay, setDelay] = useState(null);
   const [focusTime, setFocusTime] = useState(true);
@@ -53,6 +54,7 @@ const Pomodoro = () => {
   const handleReset = () => {
     setDelay(null);
     setRuning(false);
+    setIdle(true);
     setCounter({ ...counter, minutes: focusTimeValue, seconds: SECONDS });
   };
 
@@ -61,18 +63,21 @@ const Pomodoro = () => {
       setDelay(null);
       setRuning(false);
     } else {
+      setIdle(false);
       startCountDown();
     }
   };
 
   const handleFocusTimeValue = (minutes) => {
-    setFocusTimeValue(minutes);
-    if (!running) {
+    if (idle) {
+      setFocusTimeValue(minutes);
       saveCounterState(minutes, SECONDS);
     }
   };
   const handleBreakTimeValue = (minutes) => {
-    setBreakTimeValue(minutes);
+    if (idle) {
+      setBreakTimeValue(minutes);
+    }
   };
 
   return (
