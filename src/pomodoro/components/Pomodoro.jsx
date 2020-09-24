@@ -77,10 +77,10 @@ const Pomodoro = () => {
       setDelay(null);
       setRuning(false);
     } else {
-      setIdle(false);
       setShowMessage(showNotification);
       startCountDown();
     }
+    setIdle(false);
   };
 
   const handleFocusTimeValue = (minutes) => {
@@ -102,6 +102,14 @@ const Pomodoro = () => {
     }
   };
 
+  const state = idle
+    ? 'idle'
+    : running
+    ? focusTime
+      ? 'focus'
+      : 'break'
+    : 'pause';
+
   return (
     <>
       <div className='pomodoro'>
@@ -118,7 +126,9 @@ const Pomodoro = () => {
         </div>
         <div className='second-row'>
           <Button text={'Reset'} handleOnClick={handleReset} />
-          <Display minutes={counter.minutes} seconds={counter.seconds} />
+          <div className={`${state}-shadow`}>
+            <Display minutes={counter.minutes} seconds={counter.seconds} />
+          </div>
           <Button text={'Play/Pause'} handleOnClick={handlePlay} />
         </div>
         <div className='third-row'>
