@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/focus-guard-react/precache-manifest.5949a46a2aebd9508dbde33735dc635a.js"
+  "/focus-guard-react/precache-manifest.2ea5a8ac06eec88e1da83f6b5b65bcfc.js"
 );
 
 self.addEventListener('message', (event) => {
