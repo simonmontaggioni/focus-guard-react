@@ -1,20 +1,20 @@
 .display {
   display: flex;
-  width: 350px;
-  height: 200px;
+  width: 250px;
+  height: 150px;
   background-color: rgb(102, 255, 153);
   justify-content: center;
   align-items: center;
   border: solid 2px rgb(26, 14, 80);
   border-radius: 20px;
-  font-size: 110px;
+  font-size: 80px;
   font-family: '7segments';
   letter-spacing: 3px;
   color: rgb(0, 0, 0);
 
   .colon {
     position: relative;
-    bottom: 17px;
+    bottom: 10px;
   }
 
   .dark {

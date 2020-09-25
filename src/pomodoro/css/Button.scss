@@ -1,14 +1,14 @@
 .button {
-  width: 350px;
-  height: 45px;
+  width: 250px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 25px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
   cursor: pointer;
-  border: solid 3px rgb(26, 14, 80);
+  border: solid 2px rgb(26, 14, 80);
   border-radius: 10px;
   background: rgba(156, 241, 252, 1);
   background: -moz-linear-gradient(
