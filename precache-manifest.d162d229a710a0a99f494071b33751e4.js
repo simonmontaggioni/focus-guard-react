@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8284a7eb4501a54ee727b78f0af4c37c",
+    "revision": "70454527f1e9d7b8ebd394c6fe326a81",
     "url": "/focus-guard-react/index.html"
   },
   {
-    "revision": "ab87ed54a4b417f9e147",
-    "url": "/focus-guard-react/static/css/main.0ca42dd1.chunk.css"
+    "revision": "194d7b2ec761372bb41f",
+    "url": "/focus-guard-react/static/css/main.1cff0362.chunk.css"
   },
   {
     "revision": "d03820702257a582135e",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/focus-guard-react/static/js/2.cd6aad0f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ab87ed54a4b417f9e147",
+    "revision": "194d7b2ec761372bb41f",
     "url": "/focus-guard-react/static/js/main.2333aa7e.chunk.js"
   },
   {
