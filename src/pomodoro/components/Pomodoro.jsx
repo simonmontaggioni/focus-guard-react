@@ -9,9 +9,9 @@ import alarmPath from '../assets/sounds/Japanese-Temple-Bell-Small.wav';
 
 import useInterval from '../hooks/useInterval';
 
-const MINUTES = 2;
+const MINUTES = 25;
 const SECONDS = 0;
-const DEFAULT_DELAY = 50;
+const DEFAULT_DELAY = 1000;
 const MAX_TIME_VALUE = 59;
 
 const Pomodoro = () => {
