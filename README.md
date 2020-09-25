@@ -1,4 +1,4 @@
-# **\*FOCUS GUARD ** : a pomodoro timer.\*
+# ***FOCUS GUARD** : a pomodoro timer.*
 
 ## Introduction
 
